@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta 帳號停權自救會 - 常見問題 FAQ</title>
+    <style>
+        /* 基礎全域樣式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5; /* 淺灰底色 */
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 1. 控制橫幅外框（新加入） */
+        .banner-container {
+            width: 100%;
+            max-width: 650px;      /* 寬度與下方的 Q&A 框切齊 */
+            margin-bottom: 20px;   /* 與下方卡片的間距 */
+            border-radius: 12px;   /* 圓角效果 */
+            overflow: hidden;      /* 確保圖片超出圓角的部分會被切掉 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 淡淡的陰影 */
+        }
+
+        /* 2. 控制圖片本身（新加入） */
+        .main-banner {
+            width: 100%;           /* 寬度自動填滿外框 */
+            height: auto;          /* 高度依比例縮放，不變形 */
+            display: block;        /* 移除圖片底部預設的微小空白間隙 */
+        }
+
+        /* Q&A 主要容器卡片 */
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box; /* 確保 padding 不會撐開總寬度 */
+        }
+
+        /* 警告或重點提示框 */
+        .alert-box {
+            background-color: #ffebe9;
+            border-left: 5px solid #ff1a1a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #660000;
+        }
+
+        /* Q&A 摺疊面板項目 */
+        .faq-item {
+            border-bottom: 1px solid #e4e6eb;
+            padding: 15px 0;
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #050505;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            color: #1877f2; /* 懸停時變藍色 */
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: #4b4f56;
+            line-height: 1.6;
+            margin-top: 10px;
+            display: none; /* 預設隱藏答案 */
+            padding-left: 5px;
+        }
+
+        /* 頁尾 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #8a8d91;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-container">
+        <img src="banner.jpg" alt="Meta 停權自救會 Banner" class="main-banner">
+    </div>
+
+    <div class="container">
+
+        <div class="alert-box">
+            <strong>⚠️ 點對點重要提醒：</strong> 網路上任何宣稱「付費幫你駭入、強制復原帳號」的人**全部都是詐騙**。請一律走官方申訴或法律途徑，千萬不要二次受騙！
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Q1. 帳號剛被停權，第一步該做什麼？ <span>＋</span>
+            </div>
+            <div class="faq-answer">
+                請立刻在登入畫面點擊「要求審查」或「不服審查決定」。通常系統會要求你上傳身分證件或進行人臉自拍驗證。請務必在 <strong>180 天內</strong> 完成此步驟，否則帳號可能會被永久關閉。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Q2. 官方申訴頁面卡住、沒反應怎麼辦？ <span>＋</span>
+            </div>
+            <div class="faq-answer">
+                這是 Meta 系統常出現的 Bug。建議嘗試：<br>
+                1. 切換成電腦瀏覽器，並開啟「無痕模式」。<br>
+                2. 清除瀏覽器的 Cookie 與快取紀錄。<br>
+                3. 下載 Meta 旗下的其他 App（如商務套件 Business Suite）嘗試從中尋找回報管道。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Q3. 聽說可以透過「小額訴訟」自救，那是甚麼？ <span>＋</span>
+            </div>
+            <div class="faq-answer">
+                如果官方申訴管道完全斷訊、石沉大海，部分受害者會選擇向 Meta 當地分公司（例如台灣或美國加州法院）提出小額訴訟或消保官申訴。這可以「強制」讓 Meta 的法務團隊出面檢視你的帳號案情，是近年自救會成員熱烈討論的非官方途徑之一。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Q4. 如何預防帳號再次被集體惡意檢舉？ <span>＋</span>
+            </div>
+            <div class="faq-answer">
+                1. 建議開啟「雙重驗證 (2FA)」，防止帳號被盜。<br>
+                2. 敏感言論或容易引戰的貼文，可以考慮將權限設為「僅限朋友」。<br>
+                3. 平時定期備份重要的照片與聯絡人資料，避免雞蛋放在同一個籃子裡。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Meta 停權自救會 | 本網頁由熱心成員製作，非 Meta 官方網站</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            var answer = element.nextElementSibling;
+            var icon = element.querySelector('span');
+            
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.textContent = "＋";
+            } else {
+                answer.style.display = "block";
+                icon.textContent = "－";
+            }
+        }
+    </script>
+
+</body>
+</html>
